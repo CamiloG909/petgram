@@ -1,10 +1,23 @@
 const data = {
-	user: [
+	users: [
 		{
 			id: "90",
+			username: "downey2021",
 			password: "$2b$10$RNCVsIxNLKP8Gl.BPoedXuwGczl527UfsLDYcb.9V856ng4kxULrS",
-			favs: ["18", "16", "1", "15"],
-			avatar: "https://gravatar.com/avatar/3bccd59be0a57b39bdd9b2760702795e",
+			name: "Robert",
+			lastname: "Downey",
+			avatar:
+				"https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50",
+			email: "downey0@gmail.com",
+		},
+		{
+			id: "80",
+			username: "camilog90",
+			password: "$2b$10$RNCVsIxNLKP8Gl.BPoedXuwGczl527UfsLDYcb.9V856ng4kxULrS",
+			name: "Camilo",
+			lastname: "Galindo R",
+			avatar:
+				"https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50",
 			email: "camilog90@gmail.com",
 		},
 	],
