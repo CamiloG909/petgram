@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, Fragment } from "react";
 import { useParams } from "react-router-dom";
 import { InfoProfile } from "../components/InfoProfile";
 import db from "../db";
@@ -11,7 +11,11 @@ const Profile = () => {
 		setProfile(db.users.find((user) => user.id == id));
 	}, [id]);
 
-	return <InfoProfile profile={profile} />;
+	return (
+		<Fragment>
+			<InfoProfile profile={profile} />
+		</Fragment>
+	);
 };
 
 export default Profile;

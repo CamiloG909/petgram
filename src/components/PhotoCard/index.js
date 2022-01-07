@@ -3,6 +3,7 @@ import { Article, ImgWrapper, Img, Button, TextLikes } from "./styles";
 import { BsHeart, BsHeartFill } from "react-icons/bs";
 import useLocalStorage from "../../hooks/useLocalStorage";
 import useNearScreen from "../../hooks/useNearScreen";
+import PropTypes from "prop-types";
 
 export const PhotoCard = ({
 	id,
@@ -43,4 +44,21 @@ export const PhotoCard = ({
 			)}
 		</Article>
 	);
+};
+
+PhotoCard.propTypes = {
+	id: PropTypes.number.isRequired,
+	likes: function (props, propName, componentName) {
+		const propValue = props[propName];
+		if (propValue === undefined) {
+			return new Error(`${propName} value must be defined in ${componentName}`);
+		}
+		if (propValue < 0) {
+			return new Error(
+				`${propName} value must be greater than or equal to 0 in ${componentName}`
+			);
+		}
+		return null;
+	},
+	src: PropTypes.string,
 };

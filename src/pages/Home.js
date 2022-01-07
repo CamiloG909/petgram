@@ -1,5 +1,6 @@
-import React, { Fragment, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import Layout from "../components/Layout";
 import { Header } from "../components/Header";
 import { ListOfCategories } from "../components/ListOfCategories";
 import { ListOfPhotoCards } from "../components/ListOfPhotoCards";
@@ -23,11 +24,11 @@ const Home = () => {
 	}, [category]);
 
 	return (
-		<Fragment>
+		<Layout title="Home">
 			<Header />
 			<ListOfCategories />
 			<ListOfPhotoCards categoryId={categoryId} />
-		</Fragment>
+		</Layout>
 	);
 };
 

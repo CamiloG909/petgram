@@ -1,13 +1,14 @@
-import React, { Fragment } from "react";
+import React from "react";
 import styled from "styled-components";
 import { FavoritesContainer } from "../components/FavoritesContainer";
+import Layout from "../components/Layout";
 
 const Favorites = () => {
 	return (
-		<Fragment>
+		<Layout title="Favorites">
 			<Title>Favorites</Title>
 			<FavoritesContainer />
-		</Fragment>
+		</Layout>
 	);
 };
 

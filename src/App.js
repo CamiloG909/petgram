@@ -1,14 +1,16 @@
-import React, { Fragment } from "react";
+import React, { lazy, Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
 import { GlobalStyles } from "./GlobalStyles";
 import { NavBar } from "./components/NavBar";
-import Home from "./pages/Home";
-import Favorites from "./pages/Favorites";
-import Profile from "./pages/Profile";
+import Loader from "./components/ListOfPhotoCards/Loader";
+
+const Home = lazy(() => import("./pages/Home"));
+const Profile = lazy(() => import("./pages/Profile"));
+const Favorites = lazy(() => import("./pages/Favorites"));
 
 const App = () => {
 	return (
-		<Fragment>
+		<Suspense fallback={<Loader />}>
 			<GlobalStyles />
 			<Routes>
 				<Route path="/" element={<Home />} />
@@ -17,7 +19,7 @@ const App = () => {
 				<Route path="/user/:id" element={<Profile />} />
 			</Routes>
 			<NavBar />
-		</Fragment>
+		</Suspense>
 	);
 };
 

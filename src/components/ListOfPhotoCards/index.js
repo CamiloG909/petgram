@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { PhotoCard } from "../PhotoCard";
 import Loader from "./Loader";
+import PropTypes from "prop-types";
 import db from "../../db";
 
 export const ListOfPhotoCards = ({ categoryId }) => {
@@ -29,4 +30,8 @@ export const ListOfPhotoCards = ({ categoryId }) => {
 			))}
 		</section>
 	);
+};
+
+ListOfPhotoCards.propTypes = {
+	categoryId: PropTypes.string.isRequired,
 };
